@@ -5,6 +5,9 @@
 0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
 local _DIRNAME="${0:h}"
 
+autoload -Uz compinit
+compinit -u
+
 if (( $+commands[exa] )); then
   typeset -g exa_params
   # Use exa
